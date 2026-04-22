@@ -1,15 +1,31 @@
-🧠 Problem Statement
+## Problem Statement
 
-Modern language models generate sentence embeddings that effectively capture **semantic meaning**, but it remains unclear whether these embeddings also preserve emotional structure in a separable form.
+Modern language models generate sentence embeddings that effectively capture semantic meaning, but it remains unclear whether these embeddings also preserve emotional structure in a separable form.
 
 This problem becomes more challenging in code-mixed languages such as Hinglish, where linguistic signals are noisier and less standardized.
 
 This project aims to investigate:
 
-Whether sentence embeddings can naturally cluster emotions (joy, fear, anger)
-How well this clustering holds for English vs Hinglish text
-Whether an emotion-specialized English model generalizes to code-mixed inputs
+- Whether sentence embeddings can naturally cluster emotions (joy, fear, anger)
+- How well this clustering holds for English vs Hinglish text
+- Whether an emotion-specialized English model generalizes to code-mixed inputs
 
 Formally, the problem can be stated as:
+DO SENTENCE EMBEDDINGS ENCODE EMOTIONAL INFORMATION IN A WAY THAT ENABLES MEANINGFUL CLUSTERING, AND HOW DOES THIS CAPABILITY DEGRADE IN CODE-MIXED LANGUAGE SETTINGS?
 
-Do sentence embeddings encode emotional information in a way that enables meaningful clustering, and how does this capability degrade in code-mixed language settings?
+## Conclusion
+
+The experiments reveal that emotion-specific embeddings can achieve moderate clustering performance on English text, indicating that emotional signals are partially encoded in embedding space.
+However, this capability significantly degrades for Hinglish data, where clusters become less separable and more overlapping.
+
+Two key factors contribute to this behavior:
+->The embedding model is trained primarily on English, limiting its ability to generalize to code-mixed inputs
+->The smaller Hinglish dataset reduces clustering reliability and amplifies noise
+
+More importantly, the results highlight a deeper insight:
+Sentence embeddings are fundamentally optimized for semantic similarity, not for emotional separability.
+
+As a result, even emotion-aware models struggle to form clean emotional clusters, especially in multilingual or code-mixed contexts.
+Overall, this study demonstrates that while embeddings contain some emotional information, they are not inherently structured for emotion-based clustering, and this limitation becomes more pronounced in real-world, mixed-language scenarios
+
+SENTENCE EMBEDDINGS ENCODE EMOTIONAL INFORMATION ONLY WEAKLY AND ARE NOT INHERENTLY STRUCTURED FOR EMOTION-BASED CLUSTERING; THIS LIMITATION BECOMES MORE PRONOUNCED IN CODE-MIXED LANGUAGE SETTINGS, WHERE MODEL BIAS AND DATA VARIABILITY FURTHER DEGRADE EMOTIONAL SEPARABILITY.
