@@ -1,0 +1,15 @@
+🧠 Problem Statement
+
+Modern language models generate sentence embeddings that effectively capture **semantic meaning**, but it remains unclear whether these embeddings also preserve emotional structure in a separable form.
+
+This problem becomes more challenging in code-mixed languages such as Hinglish, where linguistic signals are noisier and less standardized.
+
+This project aims to investigate:
+
+Whether sentence embeddings can naturally cluster emotions (joy, fear, anger)
+How well this clustering holds for English vs Hinglish text
+Whether an emotion-specialized English model generalizes to code-mixed inputs
+
+Formally, the problem can be stated as:
+
+Do sentence embeddings encode emotional information in a way that enables meaningful clustering, and how does this capability degrade in code-mixed language settings?
